@@ -1,0 +1,16 @@
+{"plan": {"eligibilityClass": [{
+    "planDesign": [
+          {
+            "monthlyClaimCost": 300,
+            "monthlyFullProfitPremium": 234,
+            "monthlyZeroProfitPremium": 200
+          },
+          {
+            "monthlyClaimCost": 300,
+            "monthlyFullProfitPremium": 456,
+            "monthlyZeroProfitPremium": 200
+          }
+        ]
+  }]
+}
+}
