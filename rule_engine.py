@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import fitz  # PyMuPDF
 import re
+import calc_engine as calceng
 
 def extract_text_from_pdf(pdf_path):
     with fitz.open(pdf_path) as doc:
@@ -93,9 +94,16 @@ def main():
     results = []
     for _, row in rules_df.iterrows():
         rule_id = row.get('Rule No', 'N/A')
-        result, expected = evaluate_rule(row, pdf_text, input_data)
-        results.append(result)
-        print(f"Rule {rule_id}: {result}")
+        if (('∑' in row["Output Language"]) or ('∑' in row["Input Value"])):
+            calcresult = calceng.calc_engine_validation(row)
+            results.append(calcresult)
+            print(f"Rule {rule_id}: {calcresult}")
+        else:
+            result, expected = evaluate_rule(row, pdf_text, input_data)
+            results.append(result)
+            print(f"Rule {rule_id}: {result}")
+
+        
 
     rules_df['Result'] = results
     rules_df.to_excel("rule_results.xlsx", index=False)
