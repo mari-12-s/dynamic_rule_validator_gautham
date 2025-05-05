@@ -3,21 +3,29 @@ import json
 from itertools import chain
 
 json_path = 'calctestdata.json'
-#json_path2 = 'calcTestdata2.json'
+json_path2 = 'calcTestdata2.json'
 #excel_path = "Rules.xlsx"
 extracted_table_path = "Tables.xlsx"
+identifier = "planDesignName"
+identifierArr = []
 
 #calculate formula
 def formula_calculation(formula_string, json_data):
     formula = formula_string.lower().replace(' ', '').replace(',', '+')
     result = []
+    identifierArr = []
     for val in json_data:
         lval = {key.lower(): value for key, value in val.items()}
+
+        identifierArr.append(lval["plandesignname"])
+
         try:
             result.append(eval(formula, {}, lval))
         except:
             print("")
-    return(sum(result))
+    identifierArr_local = identifierArr
+    identifierArr = []
+    return (sum(result)), ', '.join(identifierArr_local)
 
 def extract_req_json(xpathtext, inputjson):
     text = xpathtext
@@ -76,16 +84,16 @@ def calc_engine_validation(row):
     extracted_table_values_arr = []
     calc_engine_result_values_arr = []
     for erjd in extract_req_json_data:
-        formula_result = formula_calculation(formula_text, erjd)
+        formula_result, identify = formula_calculation(formula_text, erjd)
         before, sep, after = op_label.partition(":")
         for i, tdf in enumerate(tables_df):
             extracted_table_result = extract_table_value(before, after, tables_df[tdf])
             if (formula_result == extracted_table_result):
                 flag = 'PASS'
-                flag_final.append(flag)
+                flag_final.append({identify: flag})
             elif ((formula_result != extracted_table_result) and (extracted_table_result != "")):
                 flag = 'FAIL'
-                flag_final.append(flag)
+                flag_final.append({identify: flag})
             if (extracted_table_result != ""):
                 extracted_table_values_arr.append(int(extracted_table_result))
         calc_engine_result_values_arr.append(formula_result)

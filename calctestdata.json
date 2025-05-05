@@ -4,12 +4,14 @@
     "eligibilityClass": [{
       "EligibilityClassName": "Eligibility Class 1",
       "planDesign": [{
-        "monthlyClaimCost": 70,
+        "planDesignName": "PD11",
+        "monthlyClaimCost": 30,
         "monthlyFullProfitPremium": 100,
         "monthlyZeroProfitPremium": 400,
         "monthlyBaseClaimCost": 14450
       },
       {
+        "planDesignName": "PD12",
         "monthlyClaimCost": 30,
         "monthlyFullProfitPremium": 100,
         "monthlyZeroProfitPremium": 400,
@@ -19,15 +21,17 @@
     {
       "EligibilityClassName": "Eligibility Class 2",
       "planDesign": [{
+        "planDesignName": "PD21",
         "monthlyClaimCost": 30,
         "monthlyFullProfitPremium": 100,
-        "monthlyZeroProfitPremium": 150,
+        "monthlyZeroProfitPremium": 400,
         "monthlyBaseClaimCost": 14450
       },
       {
+        "planDesignName": "PD22",
         "monthlyClaimCost": 30,
         "monthlyFullProfitPremium": 100,
-        "monthlyZeroProfitPremium": 150,
+        "monthlyZeroProfitPremium": 400,
         "monthlyBaseClaimCost": 14450
       }]
     }]
@@ -37,12 +41,14 @@
     "eligibilityClass": [{
       "EligibilityClassName": "Eligibility Class 1",
       "planDesign": [{
+        "planDesignName": "PD31",
         "monthlyClaimCost": 301,
         "monthlyFullProfitPremium": 1001,
         "monthlyZeroProfitPremium": 4001,
         "monthlyBaseClaimCost": 144501
       },
       {
+        "planDesignName": "PD32",
         "monthlyClaimCost": 302,
         "monthlyFullProfitPremium": 1002,
         "monthlyZeroProfitPremium": 4002,
@@ -52,17 +58,26 @@
     {
       "EligibilityClassName": "Eligibility Class 2",
       "planDesign": [{
+        "planDesignName": "PD41",
         "monthlyClaimCost": 303,
         "monthlyFullProfitPremium": 1003,
         "monthlyZeroProfitPremium": 4003,
         "monthlyBaseClaimCost": 144503
       },
       {
+        "planDesignName": "PD42",
         "monthlyClaimCost": 704,
         "monthlyFullProfitPremium": 1004,
         "monthlyZeroProfitPremium": 4004,
         "monthlyBaseClaimCost": 144504
-      }]
+      },
+      {
+          "planDesignName": "PD43",
+          "monthlyClaimCost": 704,
+          "monthlyFullProfitPremium": 1004,
+          "monthlyZeroProfitPremium": 4004,
+          "monthlyBaseClaimCost": -275740
+        }]
     }]
   }]
 }
