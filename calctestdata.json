@@ -34,6 +34,16 @@
         "monthlyZeroProfitPremium": 400,
         "monthlyBaseClaimCost": 14450
       }]
+    },
+    {
+      "EligibilityClassName": "Eligibility Class 3",
+      "planDesign": [{
+        "planDesignName": "PD51",
+        "monthlyClaimCost": 30,
+        "monthlyFullProfitPremium": 10,
+        "monthlyZeroProfitPremium": 40,
+        "monthlyBaseClaimCost": 144
+      }]
     }]
   },
   {

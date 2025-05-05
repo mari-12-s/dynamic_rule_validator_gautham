@@ -11,7 +11,7 @@ identifierArr = []
 
 #calculate formula
 def formula_calculation(formula_string, json_data):
-    formula = formula_string.lower().replace(' ', '').replace(',', '+')
+    formula = formula_string.lower().replace(' ', '').replace(',', '+').replace('x', '*')
     result = []
     identifierArr = []
     for val in json_data:
@@ -73,13 +73,14 @@ def calc_engine_validation(row):
     op_language = row["Output Language"]
     ip_value = row["Input Value"]
     tables_df = pd.read_excel(extracted_table_path, sheet_name=None)
-    with open(json_path, 'r') as f:
+    with open(json_path2, 'r') as f:
         ip_json_value = json.load(f)
     if ('∑') in op_language:
         formula_text = op_language.replace('∑', '').replace('<', '').replace('>', '')
     else:
         formula_text = ip_value.replace('∑', '').replace('<', '').replace('>', '')
     extract_req_json_data = extract_req_json("plan/eligibilityClass/planDesign", ip_json_value)
+    flag = []
     flag_final = []
     extracted_table_values_arr = []
     calc_engine_result_values_arr = []
@@ -89,15 +90,16 @@ def calc_engine_validation(row):
         for i, tdf in enumerate(tables_df):
             extracted_table_result = extract_table_value(before, after, tables_df[tdf])
             if (formula_result == extracted_table_result):
-                flag = 'PASS'
-                flag_final.append({identify: flag})
+                flag.append('PASS')
+                flag_final.append({identify: "PASS"})
             elif ((formula_result != extracted_table_result) and (extracted_table_result != "")):
-                flag = 'FAIL'
-                flag_final.append({identify: flag})
+                flag.append('FAIL')
+                flag_final.append({identify: "FAIL"})
             if (extracted_table_result != ""):
                 extracted_table_values_arr.append(int(extracted_table_result))
         calc_engine_result_values_arr.append(formula_result)
     print("Extracted Table Value List: ", extracted_table_values_arr)
     print("Calc Engine Result Value List: ", calc_engine_result_values_arr)
     print("FLAG: ", {op_label: flag_final})
-    return flag_final
+    flag = 'FAIL' if 'FAIL' in flag else 'PASS'
+    return flag, flag_final

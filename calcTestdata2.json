@@ -1,10 +1,93 @@
-[{
-    "monthlyClaimCost": 255,
-    "monthlyFullProfitPremium": 234,
-    "monthlyZeroProfitPremium": 345
-},
 {
-    "monthlyClaimCost": 255,
-    "monthlyFullProfitPremium": 234,
-    "monthlyZeroProfitPremium": 345
-}]
+    "plan":  [{
+      "product": "AI",
+      "eligibilityClass": [{
+        "EligibilityClassName": "Eligibility Class 1",
+        "planDesign": [{
+          "planDesignName": "PD11",
+          "monthlyClaimCost": 30,
+          "monthlyFullProfitPremium": 150,
+          "monthlyZeroProfitPremium": 400,
+          "monthlyBaseClaimCost": 20000
+        },
+        {
+          "planDesignName": "PD12",
+          "monthlyClaimCost": 70,
+          "monthlyFullProfitPremium": 350,
+          "monthlyZeroProfitPremium": 400,
+          "monthlyBaseClaimCost": 20000
+        }]
+      },
+      {
+        "EligibilityClassName": "Eligibility Class 2",
+        "planDesign": [{
+          "planDesignName": "PD21",
+          "monthlyClaimCost": 50,
+          "monthlyFullProfitPremium": 250,
+          "monthlyZeroProfitPremium": 500,
+          "monthlyBaseClaimCost": 2000
+        },
+        {
+          "planDesignName": "PD22",
+          "monthlyClaimCost": 50,
+          "monthlyFullProfitPremium": 250,
+          "monthlyZeroProfitPremium": 300,
+          "monthlyBaseClaimCost": 2000
+        }]
+      },
+      {
+        "EligibilityClassName": "Eligibility Class 3",
+        "planDesign": [{
+          "planDesignName": "PD51",
+          "monthlyClaimCost": 100,
+          "monthlyFullProfitPremium": 500,
+          "monthlyZeroProfitPremium": 800,
+          "monthlyBaseClaimCost": 40000
+        }]
+      }]
+    },
+    {
+      "product": "CI",
+      "eligibilityClass": [{
+        "EligibilityClassName": "Eligibility Class 1",
+        "planDesign": [{
+          "planDesignName": "PD31",
+          "monthlyClaimCost": 75,
+          "monthlyFullProfitPremium": 450,
+          "monthlyZeroProfitPremium": 200,
+          "monthlyBaseClaimCost": 15000
+        },
+        {
+          "planDesignName": "PD32",
+          "monthlyClaimCost": 25,
+          "monthlyFullProfitPremium": 50,
+          "monthlyZeroProfitPremium": 600,
+          "monthlyBaseClaimCost": 25000
+        }]
+      },
+      {
+        "EligibilityClassName": "Eligibility Class 2",
+        "planDesign": [{
+          "planDesignName": "PD41",
+          "monthlyClaimCost": 33,
+          "monthlyFullProfitPremium": 200,
+          "monthlyZeroProfitPremium": 250,
+          "monthlyBaseClaimCost": 10000
+        },
+        {
+          "planDesignName": "PD42",
+          "monthlyClaimCost": 33,
+          "monthlyFullProfitPremium": 150,
+          "monthlyZeroProfitPremium": 250,
+          "monthlyBaseClaimCost": 20000
+        },
+        {
+            "planDesignName": "PD43",
+            "monthlyClaimCost": 34,
+            "monthlyFullProfitPremium": 150,
+            "monthlyZeroProfitPremium": 300,
+            "monthlyBaseClaimCost": 10000
+          }]
+      }]
+    }]
+  }

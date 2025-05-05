@@ -92,20 +92,24 @@ def main():
     print("Loaded input data keys:", list(input_data.keys()))
 
     results = []
+    result_details = []
     for _, row in rules_df.iterrows():
         rule_id = row.get('Rule No', 'N/A')
         if (('∑' in row["Output Language"]) or ('∑' in row["Input Value"])):
-            calcresult = calceng.calc_engine_validation(row)
+            calcresult, calc_result_details = calceng.calc_engine_validation(row)
             results.append(calcresult)
+            result_details.append(calc_result_details)
             print(f"Rule {rule_id}: {calcresult}")
         else:
             result, expected = evaluate_rule(row, pdf_text, input_data)
             results.append(result)
+            result_details.append(result)
             print(f"Rule {rule_id}: {result}")
 
         
 
     rules_df['Result'] = results
+    rules_df['Result Details'] = result_details
     rules_df.to_excel("rule_results.xlsx", index=False)
 
 if __name__ == "__main__":
