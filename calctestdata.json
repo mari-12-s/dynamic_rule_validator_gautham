@@ -1,18 +1,68 @@
-{"plan": {"eligibilityClass": [{
-    "planDesign": [
-          {
-            "monthlyClaimCost": 70,
-            "monthlyFullProfitPremium": 100,
-            "monthlyZeroProfitPremium": 400,
-            "monthlyBaseClaimCost": 14450
-          },
-          {
-            "monthlyClaimCost": 30,
-            "monthlyFullProfitPremium": 100,
-            "monthlyZeroProfitPremium": 400,
-            "monthlyBaseClaimCost": 14450
-          }
-        ]
+{
+  "plan":  [{
+    "product": "AI",
+    "eligibilityClass": [{
+      "EligibilityClassName": "Eligibility Class 1",
+      "planDesign": [{
+        "monthlyClaimCost": 70,
+        "monthlyFullProfitPremium": 100,
+        "monthlyZeroProfitPremium": 400,
+        "monthlyBaseClaimCost": 14450
+      },
+      {
+        "monthlyClaimCost": 30,
+        "monthlyFullProfitPremium": 100,
+        "monthlyZeroProfitPremium": 400,
+        "monthlyBaseClaimCost": 14450
+      }]
+    },
+    {
+      "EligibilityClassName": "Eligibility Class 2",
+      "planDesign": [{
+        "monthlyClaimCost": 30,
+        "monthlyFullProfitPremium": 100,
+        "monthlyZeroProfitPremium": 150,
+        "monthlyBaseClaimCost": 14450
+      },
+      {
+        "monthlyClaimCost": 30,
+        "monthlyFullProfitPremium": 100,
+        "monthlyZeroProfitPremium": 150,
+        "monthlyBaseClaimCost": 14450
+      }]
+    }]
+  },
+  {
+    "product": "CI",
+    "eligibilityClass": [{
+      "EligibilityClassName": "Eligibility Class 1",
+      "planDesign": [{
+        "monthlyClaimCost": 301,
+        "monthlyFullProfitPremium": 1001,
+        "monthlyZeroProfitPremium": 4001,
+        "monthlyBaseClaimCost": 144501
+      },
+      {
+        "monthlyClaimCost": 302,
+        "monthlyFullProfitPremium": 1002,
+        "monthlyZeroProfitPremium": 4002,
+        "monthlyBaseClaimCost": 144502
+      }]
+    },
+    {
+      "EligibilityClassName": "Eligibility Class 2",
+      "planDesign": [{
+        "monthlyClaimCost": 303,
+        "monthlyFullProfitPremium": 1003,
+        "monthlyZeroProfitPremium": 4003,
+        "monthlyBaseClaimCost": 144503
+      },
+      {
+        "monthlyClaimCost": 704,
+        "monthlyFullProfitPremium": 1004,
+        "monthlyZeroProfitPremium": 4004,
+        "monthlyBaseClaimCost": 144504
+      }]
+    }]
   }]
-}
 }
