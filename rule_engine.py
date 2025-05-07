@@ -82,6 +82,9 @@ def main():
     excel_path = "Rules.xlsx"
     pdf_path = "New_York_Life_Insurance.pdf"
     json_path = "testdata.json"
+    pdf_path2 = 'output.pdf'
+    table_output_excel_name = 'Tables.xlsx'
+    extracted_table_path = calceng.extract_tables_from_pdf(pdf_path2, table_output_excel_name)
 
     rules_df = load_rules(excel_path)
     pdf_text = extract_text_from_pdf(pdf_path)
@@ -96,7 +99,7 @@ def main():
     for _, row in rules_df.iterrows():
         rule_id = row.get('Rule No', 'N/A')
         if (('∑' in row["Output Language"]) or ('∑' in row["Input Value"])):
-            calcresult, calc_result_details = calceng.calc_engine_validation(row)
+            calcresult, calc_result_details = calceng.calc_engine_validation(row, extracted_table_path)
             results.append(calcresult)
             result_details.append(calc_result_details)
             print(f"Rule {rule_id}: {calcresult}")

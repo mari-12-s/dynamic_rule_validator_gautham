@@ -4,45 +4,50 @@
     "eligibilityClass": [{
       "EligibilityClassName": "Eligibility Class 1",
       "planDesign": [{
+        "coverageTier": "1 Tier",
         "planDesignName": "PD11",
         "monthlyClaimCost": 30,
-        "monthlyFullProfitPremium": 100,
+        "monthlyFullProfitPremium": 150,
         "monthlyZeroProfitPremium": 400,
-        "monthlyBaseClaimCost": 14450
+        "monthlyBaseClaimCost": 20000
       },
       {
         "planDesignName": "PD12",
-        "monthlyClaimCost": 30,
-        "monthlyFullProfitPremium": 100,
+        "coverageTier": "1 Tier",
+        "monthlyClaimCost": 70,
+        "monthlyFullProfitPremium": 350,
         "monthlyZeroProfitPremium": 400,
-        "monthlyBaseClaimCost": 14450
+        "monthlyBaseClaimCost": 20000
       }]
     },
     {
       "EligibilityClassName": "Eligibility Class 2",
       "planDesign": [{
         "planDesignName": "PD21",
-        "monthlyClaimCost": 30,
-        "monthlyFullProfitPremium": 100,
-        "monthlyZeroProfitPremium": 400,
-        "monthlyBaseClaimCost": 14450
+        "coverageTier": "1 Tier",
+        "monthlyClaimCost": 50,
+        "monthlyFullProfitPremium": 250,
+        "monthlyZeroProfitPremium": 500,
+        "monthlyBaseClaimCost": 2000
       },
       {
         "planDesignName": "PD22",
-        "monthlyClaimCost": 30,
-        "monthlyFullProfitPremium": 100,
-        "monthlyZeroProfitPremium": 400,
-        "monthlyBaseClaimCost": 14450
+        "coverageTier": "1 Tier",
+        "monthlyClaimCost": 50,
+        "monthlyFullProfitPremium": 250,
+        "monthlyZeroProfitPremium": 300,
+        "monthlyBaseClaimCost": 2000
       }]
     },
     {
       "EligibilityClassName": "Eligibility Class 3",
       "planDesign": [{
         "planDesignName": "PD51",
-        "monthlyClaimCost": 30,
-        "monthlyFullProfitPremium": 10,
-        "monthlyZeroProfitPremium": 40,
-        "monthlyBaseClaimCost": 144
+        "coverageTier": "1 Tier",
+        "monthlyClaimCost": 100,
+        "monthlyFullProfitPremium": 500,
+        "monthlyZeroProfitPremium": 800,
+        "monthlyBaseClaimCost": 40000
       }]
     }]
   },
@@ -52,41 +57,46 @@
       "EligibilityClassName": "Eligibility Class 1",
       "planDesign": [{
         "planDesignName": "PD31",
-        "monthlyClaimCost": 301,
-        "monthlyFullProfitPremium": 1001,
-        "monthlyZeroProfitPremium": 4001,
-        "monthlyBaseClaimCost": 144501
+        "coverageTier": "2 Tier",
+        "monthlyClaimCost": 75,
+        "monthlyFullProfitPremium": 450,
+        "monthlyZeroProfitPremium": 200,
+        "monthlyBaseClaimCost": 15000
       },
       {
         "planDesignName": "PD32",
-        "monthlyClaimCost": 302,
-        "monthlyFullProfitPremium": 1002,
-        "monthlyZeroProfitPremium": 4002,
-        "monthlyBaseClaimCost": 144502
+        "coverageTier": "2 Tier",
+        "monthlyClaimCost": 25,
+        "monthlyFullProfitPremium": 50,
+        "monthlyZeroProfitPremium": 600,
+        "monthlyBaseClaimCost": 25000
       }]
     },
     {
       "EligibilityClassName": "Eligibility Class 2",
       "planDesign": [{
         "planDesignName": "PD41",
-        "monthlyClaimCost": 303,
-        "monthlyFullProfitPremium": 1003,
-        "monthlyZeroProfitPremium": 4003,
-        "monthlyBaseClaimCost": 144503
+        "coverageTier": "3 Tier",
+        "monthlyClaimCost": 33,
+        "monthlyFullProfitPremium": 200,
+        "monthlyZeroProfitPremium": 250,
+        "monthlyBaseClaimCost": 10000
       },
       {
         "planDesignName": "PD42",
-        "monthlyClaimCost": 704,
-        "monthlyFullProfitPremium": 1004,
-        "monthlyZeroProfitPremium": 4004,
-        "monthlyBaseClaimCost": 144504
+        "coverageTier": "2 Tier",
+        "monthlyClaimCost": 33,
+        "monthlyFullProfitPremium": 150,
+        "monthlyZeroProfitPremium": 250,
+        "monthlyBaseClaimCost": 20000
       },
       {
           "planDesignName": "PD43",
-          "monthlyClaimCost": 704,
-          "monthlyFullProfitPremium": 1004,
-          "monthlyZeroProfitPremium": 4004,
-          "monthlyBaseClaimCost": -275740
+          "coverageTier": "3 Tier",
+          "monthlyClaimCost": 34,
+          "monthlyFullProfitPremium": 150,
+          "monthlyZeroProfitPremium": 300,
+          "monthlyBaseClaimCost": 10000
         }]
     }]
   }]
