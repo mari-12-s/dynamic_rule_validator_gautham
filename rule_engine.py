@@ -2,7 +2,8 @@ import pandas as pd
 import json
 import fitz  # PyMuPDF
 import re
-import calc_engine as calceng
+# import calc_engine as calceng
+import operations as op
 
 def extract_text_from_pdf(pdf_path):
     with fitz.open(pdf_path) as doc:
@@ -84,7 +85,7 @@ def main():
     json_path = "testdata.json"
     pdf_path2 = 'output.pdf'
     table_output_excel_name = 'Tables.xlsx'
-    extracted_table_path = calceng.extract_tables_from_pdf(pdf_path2, table_output_excel_name)
+    # extracted_table_path = calceng.extract_tables_from_pdf(pdf_path2, table_output_excel_name)
 
     rules_df = load_rules(excel_path)
     pdf_text = extract_text_from_pdf(pdf_path)
@@ -94,25 +95,33 @@ def main():
         input_data = raw_data.get("testData", {})  
     print("Loaded input data keys:", list(input_data.keys()))
 
+    isTable = False
+    extracted_tables = []
     results = []
     result_details = []
     for _, row in rules_df.iterrows():
         rule_id = row.get('Rule No', 'N/A')
-        if (('∑' in row["Output Language"]) or ('∑' in row["Input Value"])):
-            calcresult, calc_result_details = calceng.calc_engine_validation(row, extracted_table_path)
-            results.append(calcresult)
-            result_details.append(calc_result_details)
-            print(f"Rule {rule_id}: {calcresult}")
+        # if (('∑' in row["Output Language"]) or ('∑' in row["Input Value"])):
+        #     calcresult, calc_result_details = calceng.calc_engine_validation(row, extracted_table_path)
+        #     results.append(calcresult)
+        #     result_details.append(calc_result_details)
+        #     print(f"Rule {rule_id}: {calcresult}")
+        if row["Criteria"] == "TABLE NAME":
+            print("Found Table Row: ", row["Output Label"])
+            extracted_tables = op.extract_table_from_pdf(row["Output Label"], pdf_path2, "Accident Insurance")
+            isTable = True
+            results.append("TABLE NAME")
+            continue
         else:
             result, expected = evaluate_rule(row, pdf_text, input_data)
             results.append(result)
-            result_details.append(result)
+            # result_details.append(result)
             print(f"Rule {rule_id}: {result}")
 
         
 
     rules_df['Result'] = results
-    rules_df['Result Details'] = result_details
+    # rules_df['Result Details'] = result_details
     rules_df.to_excel("rule_results.xlsx", index=False)
 
 if __name__ == "__main__":
